@@ -1,0 +1,50 @@
+@import './variable';
+@import './mixin';
+
+.red-17 {
+    @include font-mixin(17px, $primary, bold, 20px);
+    @include letter-spacing(20px);
+}
+
+.white-42 {
+    @include font-mixin(42px, #fff, bold, 50px);
+    @include letter-spacing(0);
+}
+
+.form-label {
+    @include font-mixin(11px, $form-label, 400, 14px);
+    @include letter-spacing(0);
+
+    @include for-phone-only {
+        @include font-mixin(12px, $form-label, 400, 16px);
+    }
+
+    @include for-4k-desktop-up {
+        @include font-mixin(14px, $form-label, 400, 16px);
+    }
+}
+
+.black-22 {
+    @include font-mixin(22px, $balck, 400, 27px);
+    @include letter-spacing(0);
+}
+
+.grey-13 {
+    @include font-mixin(13px, $grey-1, 400, 16px);
+    @include letter-spacing(0);
+}
+ 
+.black-18 {
+    @include font-mixin(18px, $balck, bold, 22px);
+    @include letter-spacing(0);
+}
+
+.black-13 {
+    @include font-mixin(13px, $balck, 400, 16px);
+    @include letter-spacing(0);
+}
+
+.black-15-bold {
+    @include font-mixin(15px, $balck, bold, 18px);
+    @include letter-spacing(0);
+}

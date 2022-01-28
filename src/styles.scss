@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import "./assets/styles/icomoon";
+@import "./assets/styles/global";
+@import "./assets/styles/variable";
+@import "./assets/styles/typography";
+@import "./assets/styles/mixin";
+@import "./assets/styles/helper";
+@import "./assets/styles/ng-deep";
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

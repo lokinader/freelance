@@ -1,0 +1,12 @@
+<div class="profile-widget flex-center-start">
+  <div class="profile" [ngStyle]="{
+        'background-image':
+          'url(' +
+          ((user && user.profilePic) ? user.profilePic : avatar) +
+          ')'
+      }"></div>
+  <div class="info">
+    <div class="name black-15-bold">{{(user && user.name) ? user.name : 'Profile Name'}}</div>
+    <div class="designation black-13">{{(user && user.role) ? user.role : 'Designation'}}</div>
+  </div>
+</div>

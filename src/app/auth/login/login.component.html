@@ -1,0 +1,37 @@
+<div class="login-wrapper">
+  <div class="login-container row">
+    <div class="col-md-6 left d-none d-sm-block d-sm-none d-md-block white-42">
+      <div class="center-txt">
+        Welcome to
+        <div>G4S i<span>CONNECT</span></div>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12 col-sm-12 right">
+      <div class="top">
+        <div class="logo"></div>
+        <div class="red-17 txt">LOGIN</div>
+      </div>
+      <div class="black-22">Login to Your Account</div>
+      <form [formGroup]="loginForm">
+        <div class="form-group">
+          <label class="form-label">User Name</label>
+          <app-prime-input formControlName="userName" class="app-prime-input"></app-prime-input>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <app-prime-input formControlName="password" class="app-prime-input" type="password"></app-prime-input>
+        </div>
+        <div class="extra-check form-group flex-center-between">
+          <app-prime-checkbox class="app-prime-checkbox sm primary" label="Remember Me" formControlName="rememberMe">
+          </app-prime-checkbox>
+          <div class="form-label pointer">Forgot Password?</div>
+        </div>
+        <div class="form-group">
+          <app-button class="primary app-button" [disabled]="!loginForm.valid" (clickEvent)="submitForm()"
+            label="LOGIN"></app-button>
+        </div>
+      </form>
+      <div class="grey-13">Powered by Eruna Technologies</div>
+    </div>
+  </div>
+</div>

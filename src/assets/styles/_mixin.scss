@@ -1,0 +1,84 @@
+@mixin letter-spacing($sizeValue) {
+    letter-spacing: $sizeValue + px;
+}
+
+@mixin font-mixin($size: false, $color: false, $weight: false, $lh: false) {
+    @if $size {
+        font-size: $size;
+    }
+
+    @if $color {
+        color: $color;
+    }
+
+    @if $weight {
+        font-weight: $weight;
+    }
+
+    @if $lh {
+        line-height: $lh;
+    }
+}
+
+@mixin height-width($height: false, $width: false) {
+    @if $height {
+        height: $height;
+    }
+
+    @if $width {
+        width: $width;
+    }
+}
+
+
+@mixin cover-background($imagePath, $size, $positon, $bg-attachment) {
+    background: url('../images/#{$imagePath}') no-repeat;
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+
+    @if $positon {
+        background-position: $positon;
+    }
+
+    @if $bg-attachment {
+        background-attachment: $bg-attachment;
+    }
+}
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+@mixin for-4k-desktop-up {
+    @media (min-width: 2100px) {
+        @content;
+    }
+}

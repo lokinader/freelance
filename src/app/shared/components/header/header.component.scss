@@ -1,0 +1,12 @@
+@import "../../../../assets/styles/variable";
+@import "../../../../assets/styles/typography";
+@import "../../../../assets/styles/helper";
+@import "../../../../assets/styles/mixin";
+
+.header-wrapper {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    @extend .flex-center-between;
+}

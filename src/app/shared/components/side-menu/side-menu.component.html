@@ -1,0 +1,25 @@
+<div class="side-bar">
+  <div class="logo-name-wrapper">
+    <div class="logo-name">
+      <img src="../../../../assets/images/logo.svg" class="logo" alt="logo app" srcset="">
+      <span class="name">iCONNECT</span>
+    </div>
+  </div>
+  <ul class="navigation-list">
+    <li *ngFor="let item of navigationList; let i = index">
+      <div class="item-wrapper">
+        <i [class]="item.icon"></i>
+        <span class="navigation-item">
+          {{item.name}}
+        </span>
+        <div *ngIf="item.expandable" class="toggle-menu" [ngClass]="item.hideSubElement ? 'icon-arrow-down' : 'icon-arrow-up'"
+          (click)="toggleSubElement(i)"></div>
+      </div>
+      <ul *ngIf="item.expandable && item?.hideSubElement" class="sub-list">
+        <li *ngFor="let element of item.subElement">
+          {{element}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

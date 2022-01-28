@@ -1,0 +1,46 @@
+@import './variable';
+@import './typography';
+@import './mixin';
+
+.app-prime-input {
+    width: 100%;
+
+    .ui-button-text {
+        display: none;
+    }
+}
+
+.ui-chkbox-box {
+    border: 1px solid #E0E0E0;
+}
+
+.app-prime-checkbox {
+    .ui-chkbox-label {
+        margin-left: 14px;
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+    &.sm {
+        @extend .form-label;
+        margin-bottom: 0 !important;
+        .ui-chkbox-box {
+            @include height-width(13px, 13px);
+        }
+    }
+
+    &.primary {
+        .ui-chkbox-box {
+            &.ui-state-active {
+                background: $primary 0% 0% no-repeat padding-box;
+                border-color: $primary;
+
+                .ui-chkbox-icon {
+                    color: #fff;
+                    font-size: 8px;
+                    top: 2px;
+                    position: relative;
+                }
+            }
+        }
+    }
+}

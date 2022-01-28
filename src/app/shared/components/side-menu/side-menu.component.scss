@@ -1,0 +1,142 @@
+@import "../../../../assets/styles/variable";
+@import "../../../../assets/styles/typography";
+@import "../../../../assets/styles/helper";
+@import "../../../../assets/styles/mixin";
+
+.side-bar {
+    height: calc(100% - 20px);
+    position: fixed;
+    transition: all 0.5s ease;
+    top: 10px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    width: 6vw;
+    overflow: hidden;
+
+    .logo-name-wrapper {
+        @extend .flex-center-start;
+    }
+
+    &:hover {
+        width: 18vw;
+
+        @include for-phone-only {
+            width: 72vw;
+        }
+
+        @include for-tablet-portrait-up {
+            width: 32vw;
+        }
+
+        @include for-desktop-up {
+           width: 16vw;
+        }
+
+        @include for-big-desktop-up {
+           width: 18vw;
+        }
+
+        .item-wrapper {
+            justify-content: flex-start !important;
+
+            .navigation-item,
+            .toggle-menu {
+                display: block !important;
+            }
+        }
+
+        .sub-list {
+            display: block !important;
+        }
+
+        .logo-name-wrapper {
+            justify-content: flex-start !important;
+
+            .logo-name {
+                .name {
+                    display: block !important;
+                }
+            }
+        }
+    }
+
+    .logo-name-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px 10px 0 10px;
+        justify-content: center;
+
+        .logo-name {
+            display: flex;
+            align-items: center;
+
+            .name {
+                display: none;
+            }
+        }
+    }
+
+    .navigation-list {
+        overflow-y: auto;
+        height: 85%;
+        background: #fff;
+        padding: 0 4px 10px 10px;
+        margin-right: 4px;
+
+        li {
+
+            .item-wrapper {
+                @extend .flex-center-center;
+                position: relative;
+
+                .navigation-item,
+                .toggle-menu {
+                    display: none;
+                }
+
+                .navigation-item {
+                    min-width: 135px;
+                }
+
+                .icon-arrow-up,
+                .icon-arrow-down {
+                    position: absolute;
+                    right: 20px;
+                }
+
+
+                .toggle-menu {
+                    cursor: pointer;
+                }
+
+                i {
+                    color: $grey-2;
+                    font-size: 24px;
+                    cursor: pointer;
+                    padding: 8px 20px;
+                }
+
+                &:hover {
+                    background: $primary 0% 0% no-repeat padding-box;
+                    border-radius: 5px;
+                    color: $white;
+
+                    i {
+                        color: $white;
+                    }
+                }
+            }
+
+            .sub-list {
+                margin-left: 38%;
+                list-style: circle;
+                display: none;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+}

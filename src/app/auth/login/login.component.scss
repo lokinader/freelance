@@ -1,0 +1,105 @@
+@import "../../../assets/styles/mixin";
+@import "../../../assets/styles/helper";
+
+.login-wrapper {
+    @include cover-background('login_main_background.png', cover, center, fixed);
+    @include height-width(100vh, 100%);
+
+    .login-container {
+        @extend .flex-center-center;
+        @include height-width(70%, 50%);
+
+        @include for-phone-only {
+            @include height-width(90%, 90%);
+        }
+
+        @include for-tablet-portrait-up {
+            @include height-width(90%, 90%);
+        }
+
+        @include for-desktop-up {
+            @include height-width(80%, 50%);
+        }
+
+        @include for-big-desktop-up {
+            @include height-width(80%, 50%);
+        }
+
+        @extend .center-div-position;
+        border-radius: 20px;
+
+        .left {
+            @include cover-background('login_sub_background.png', cover, center, initial);
+            @include height-width(100%, 100%);
+            @extend .flex-center-center;
+            position: relative;
+            text-align: center;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+
+            span {
+                font-size: 30px;
+            }
+
+            .center-txt {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+            }
+        }
+
+        .right {
+            padding: 20px 20px 20px 34px;
+            background: #fff;
+            @include height-width(100%, 100%);
+
+            @include for-phone-only {
+                padding: 20px;
+            }
+
+            .top {
+                @extend .flex-center-between;
+
+                .logo {
+                    @include cover-background('logo.svg', contain, center, initial);
+                    @include height-width(60px, 60px);
+                }
+            }
+
+            .form {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .black-22 {
+                text-align: center;
+                margin: 40px 0;
+            }
+
+            .grey-13 {
+                position: absolute;
+                bottom: 20px;
+                width: calc(100% - 54px);
+                text-align: center;
+
+                @include for-phone-only {
+                    width: calc(100% - 40px);
+                }
+            }
+
+            .app-button {
+                width: 100%;
+            }
+
+            .extra-check {
+                margin-bottom: 30px;
+                flex-direction: row;
+
+                .form-label {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
